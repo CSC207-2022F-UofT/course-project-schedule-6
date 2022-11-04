@@ -5,7 +5,7 @@ import java.util.List;
 public class Category {
 
     private String name;
-    private List<todoItem> items;
+    //private List<todoItem> items;
     private boolean status;
     private String hex;
 
@@ -13,19 +13,23 @@ public class Category {
 
     }
 
+    /*
     public Category(String name, List<todoItem> items, boolean status, String hex) {
         this.name = name;
         this.items = items;
         this.status = status;
         this.hex = hex;
     }
+    */
 
-    public Category(String name, todoItem item, boolean status, String hex) {
+    /*public Category(String name, todoItem item, boolean status, String hex) {
         this.name = name;
         this.items.add(item);
         this.status = status;
         this.hex = hex;
     }
+    */
+
 
     public String getName() {
         return name;
