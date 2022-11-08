@@ -11,18 +11,11 @@ public class ScheduleItem {
 
     private LocalTime time;
 
-//    /**
-//     * Constructor for a ScheduleItem
-//     *
-//     * @param title the title set for ScheduleItem
-//     * @param date  the date set for ScheduleItem
-//     * @param time  the time set for ScheduleItem
-//     */
-//    public ScheduleItem(String title, LocalDate date, LocalTime time) {
-//        this.title = title;
-//        this.date = date;
-//        this.time = time;
-//    }
+    public ScheduleItem(String title, LocalDate date, LocalTime time) {
+        this.title = title;
+        this.date = date;
+        this.time = time;
+    }
 
     public void setTitle(String title) {
         this.title = title;

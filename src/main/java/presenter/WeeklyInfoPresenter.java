@@ -1,4 +1,4 @@
-package controller;
+package presenter;
 
 public class WeeklyInfoPresenter {
 }
