@@ -1,19 +1,28 @@
 package useCases;
 
+import entity.CommonScheduleItem;
 import entity.ScheduleItem;
+import entity.ScheduleItemFactory;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class AddScheduleItem {
+//A Use Case Interactor
 
-    ScheduleItem newScheduleItem;
+public class AddScheduleItem implements ScheduleItemInputBoundary {
 
-    public void addNewScheduleItem(String title, LocalDate date, LocalTime time) {
-        this.newScheduleItem.setTitle(title);
-        this.newScheduleItem.setDate(date);
-        this.newScheduleItem.setTime(time);
-        // User.addScheduleItem(this.newScheduleItem)
-        // need to add this newScheduleItem into User
+    ScheduleItemInputData inputData;
+
+    ScheduleItemFactory scheduleItemFactory;
+
+
+    public AddScheduleItem(ScheduleItemInputData inputData, ScheduleItemFactory scheduleItemFactory) {
+        this.inputData = inputData;
+        this.scheduleItemFactory = scheduleItemFactory;
+    }
+
+    public void addNewScheduleItem() {
+        ScheduleItem scheduleItem = scheduleItemFactory.create(this.inputData.getTitle(),
+                this.inputData.getDate(), this.inputData.getTime());
     }
 }

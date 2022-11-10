@@ -3,21 +3,16 @@ package entity;
 import java.util.ArrayList;
 
 public class User {
-
-    private String username;
-    private String password;
     private int itemCount;
-    private ArrayList<ScheduleItem> scheduleItems;
+    private ArrayList<CommonScheduleItem> commonScheduleItems;
 
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
+    public User() {
         this.itemCount = 0;
-        this.scheduleItems = new ArrayList<ScheduleItem>();
+        this.commonScheduleItems = new ArrayList<CommonScheduleItem>();
     }
 
-    public void addScheduleItem(ScheduleItem item) {
-        this.scheduleItems.add(this.itemCount, item);
+    public void addScheduleItem(CommonScheduleItem item) {
+        this.commonScheduleItems.add(this.itemCount, item);
         this.itemCount++;
     }
 }
