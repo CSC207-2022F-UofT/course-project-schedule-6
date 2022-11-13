@@ -9,12 +9,15 @@ public class CommonScheduleItem implements ScheduleItem {
 
     private LocalDate date;
 
-    private LocalTime time;
+    private LocalTime startTime;
 
-    public CommonScheduleItem(String title, LocalDate date, LocalTime time) {
+    private LocalTime endTime;
+
+    public CommonScheduleItem(String title, LocalDate date, LocalTime startTime, LocalTime endTime) {
         this.title = title;
         this.date = date;
-        this.time = time;
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
 
     @Override
@@ -28,7 +31,12 @@ public class CommonScheduleItem implements ScheduleItem {
     }
 
     @Override
-    public LocalTime getTime() {
-        return this.time;
+    public LocalTime getStartTime() {
+        return this.startTime;
+    }
+
+    @Override
+    public LocalTime getEndTime() {
+        return this.endTime;
     }
 }

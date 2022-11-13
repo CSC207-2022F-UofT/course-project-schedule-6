@@ -1,28 +1,25 @@
 package useCases;
 
-import entity.CommonScheduleItem;
+import InputBoundary.AddScheduleItemInputBoundary;
 import entity.ScheduleItem;
 import entity.ScheduleItemFactory;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-
-//A Use Case Interactor
-
-public class AddScheduleItem implements ScheduleItemInputBoundary {
-
-    ScheduleItemInputData inputData;
+public class AddScheduleItem implements AddScheduleItemInputBoundary {
 
     ScheduleItemFactory scheduleItemFactory;
 
+    // need to add CommonUser variable so it knows where to add the ScheduleItem
 
-    public AddScheduleItem(ScheduleItemInputData inputData, ScheduleItemFactory scheduleItemFactory) {
-        this.inputData = inputData;
+
+    public AddScheduleItem(ScheduleItemFactory scheduleItemFactory) {
         this.scheduleItemFactory = scheduleItemFactory;
     }
 
-    public void addNewScheduleItem() {
-        ScheduleItem scheduleItem = scheduleItemFactory.create(this.inputData.getTitle(),
-                this.inputData.getDate(), this.inputData.getTime());
+    @Override
+    public ScheduleItemResponseModel create(ScheduleItemInputData inputData) {
+        ScheduleItem scheduleItem = scheduleItemFactory.create(inputData.getTitle(),
+                inputData.getDate(), inputData.getStartTime(), inputData.getEndTime());
+        // created a CommonScheduleItem but need to store it in CommonUser
+        return null;
     }
 }

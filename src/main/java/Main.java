@@ -1,18 +1,15 @@
 import com.mongodb.*;
-import entity.CommonScheduleItem;
-
-import java.util.ArrayList;
+import entity.CommonUser;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<CommonScheduleItem> commonScheduleItems = new ArrayList<>();
+        MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb+srv://stevenli:stevenli@cluster0.koruj0t.mongodb.net/?retryWrites=true&w=majority"));
+        DB database = mongoClient.getDB("schedule6_testDB");
+        DBCollection collection = database.getCollection("schedule6_testCollection");
 
-        DBObject user = new BasicDBObject("_id", 1)
-                .append("ScheduleItems", commonScheduleItems);
+        CommonUser user = new CommonUser(1);
+        DBObject userData = new BasicDBObject("_id", user.getID());
 
-        MongoClient mongoClient = new MongoClient();
-        DB database = mongoClient.getDB("CSC207Project");
-        DBCollection collection = database.getCollection("schedule6");
-        collection.insert(user);
+        collection.insert(userData);
     }
 }

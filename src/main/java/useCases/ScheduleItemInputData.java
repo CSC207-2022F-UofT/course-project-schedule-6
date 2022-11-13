@@ -9,12 +9,15 @@ public class ScheduleItemInputData {
 
     private LocalDate date;
 
-    private LocalTime time;
+    private LocalTime startTime;
 
-    public ScheduleItemInputData(String title, LocalDate date, LocalTime time) {
+    private LocalTime endTime;
+
+    public ScheduleItemInputData(String title, LocalDate date, LocalTime startTime, LocalTime endTime) {
         this.title = title;
         this.date = date;
-        this.time = time;
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
 
     public String getTitle() {
@@ -25,7 +28,11 @@ public class ScheduleItemInputData {
         return this.date;
     }
 
-    public LocalTime getTime() {
-        return this.time;
+    public LocalTime getStartTime() {
+        return this.startTime;
+    }
+
+    public LocalTime getEndTime() {
+        return this.endTime;
     }
 }

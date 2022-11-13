@@ -9,5 +9,7 @@ public interface ScheduleItem {
 
     LocalDate getDate();
 
-    LocalTime getTime();
+    LocalTime getStartTime();
+
+    LocalTime getEndTime();
 }
