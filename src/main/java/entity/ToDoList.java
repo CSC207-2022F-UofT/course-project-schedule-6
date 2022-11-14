@@ -1,9 +1,9 @@
 package entity;
 import java.util.ArrayList;
 
-public class ToDo {
+public class ToDoList {
     private ArrayList<Task> tasks;
-    private ArrayList<Category> categories;
+    private ArrayList<CommonCategory> categories;
 
     public ToDo(){
         this.tasks = new ArrayList<>();
@@ -11,17 +11,15 @@ public class ToDo {
     }
 
     public void addTask(String title, String date, String time, String description){
-        Task t = new Task(title, date, time, description);
-        this.tasks.add(t);
+        this.tasks.add(new Task(title, date, time, description));
     }
 
     public void deleteTask(Task t){
         this.tasks.remove(t);
     }
 
-    public void addCategory(String name, ArrayList<Task> items, boolean status, String hex){
-        Category c = new Category(name, items, status, hex);
-        this.categories.add(c);
+    public void addCategory(String name, boolean status, String hex){
+        this.categories.add(new CommonCategory(name, status, hex));
     }
 
     public void deleteCategory(Category category){
@@ -32,7 +30,7 @@ public class ToDo {
         return this.tasks;
     }
 
-    public ArrayList<Category> getCategories(){
+    public ArrayList<CommonCategory> getCategories(){
         return this.categories;
     }
 
