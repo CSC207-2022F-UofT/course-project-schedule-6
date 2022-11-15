@@ -1,7 +1,7 @@
-package InputBoundary;
+package boundary;
 
-import useCases.ScheduleItemInputData;
-import useCases.ScheduleItemResponseModel;
+import useCaseInteractor.ScheduleItemInputData;
+import useCaseInteractor.ScheduleItemResponseModel;
 
 public interface EditScheduleItemInputBoundary {
     ScheduleItemResponseModel edit(ScheduleItemInputData inputData);

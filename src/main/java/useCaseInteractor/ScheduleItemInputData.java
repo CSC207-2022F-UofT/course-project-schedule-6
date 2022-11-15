@@ -1,4 +1,4 @@
-package useCases;
+package useCaseInteractor;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

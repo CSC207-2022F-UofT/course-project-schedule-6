@@ -1,4 +1,4 @@
-package useCases;
+package useCaseInteractor;
 
 public class EditScheduleItem {
 }

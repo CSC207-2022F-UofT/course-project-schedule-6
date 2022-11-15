@@ -1,6 +1,6 @@
-package useCases;
+package useCaseInteractor;
 
-import InputBoundary.AddScheduleItemInputBoundary;
+import boundary.AddScheduleItemInputBoundary;
 import entity.ScheduleItem;
 import entity.ScheduleItemFactory;
 
