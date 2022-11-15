@@ -1,5 +1,4 @@
 import com.mongodb.*;
-import entity.CommonUser;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,8 +6,7 @@ public class Main {
         DB database = mongoClient.getDB("schedule6_testDB");
         DBCollection collection = database.getCollection("schedule6_testCollection");
 
-        CommonUser user = new CommonUser(1);
-        DBObject userData = new BasicDBObject("_id", user.getID());
+        DBObject userData = new BasicDBObject("_id", 1);
 
         collection.insert(userData);
     }
