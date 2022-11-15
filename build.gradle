@@ -1,5 +1,12 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+javafx {
+    version = "19"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
 repositories {
@@ -9,6 +16,7 @@ repositories {
 dependencies {
     implementation 'junit:junit:4.13.1'
     testImplementation('org.junit.jupiter:junit-jupiter:5.6.0')
+    implementation('org.mongodb:mongo-java-driver:3.12.11')
 }
 
 test {
@@ -17,3 +25,5 @@ test {
         events "passed", "skipped", "failed"
     }
 }
+
+mainClassName = 'UI.MainApp'
