@@ -5,7 +5,7 @@ public class ToDoList {
     private ArrayList<Task> tasks;
     private ArrayList<CommonCategory> categories;
 
-    public ToDo(){
+    public ToDoList(){
         this.tasks = new ArrayList<>();
         this.categories = new ArrayList<>();
     }
