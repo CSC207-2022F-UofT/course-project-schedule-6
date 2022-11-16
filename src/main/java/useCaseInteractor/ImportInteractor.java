@@ -1,4 +1,4 @@
-package importScheduleUseCase;
+package useCaseInteractor;
 
 public class ImportInteractor {
 }
