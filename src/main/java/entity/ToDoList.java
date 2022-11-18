@@ -1,17 +1,18 @@
 package entity;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class ToDo {
+public class ToDoList {
     private ArrayList<Task> tasks;
     private ArrayList<Category> categories;
 
-    public ToDo(){
+    public ToDoList(){
         this.tasks = new ArrayList<>();
         this.categories = new ArrayList<>();
     }
 
-    public void addTask(String title, String date, String time, String description){
-        Task t = new Task(title, date, time, description);
+    public void addTask(String title, LocalDate date, String privacySetting, Category category){
+        Task t = new CommonTask(title, date, privacySetting, category);
         this.tasks.add(t);
     }
 
@@ -20,7 +21,7 @@ public class ToDo {
     }
 
     public void addCategory(String name, ArrayList<Task> items, boolean status, String hex){
-        Category c = new Category(name, items, status, hex);
+        Category c = new CommonCategory(name, status, hex);
         this.categories.add(c);
     }
 
